@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 		features = "src/test/resources/Feature/CreateAccount_and_SignIn.feature",
-		glue = "stepDefination",
+		glue = "stepDefinition",
 		dryRun = false)
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
