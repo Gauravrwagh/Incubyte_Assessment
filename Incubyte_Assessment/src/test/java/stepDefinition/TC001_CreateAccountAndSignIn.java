@@ -1,4 +1,4 @@
-package stepDefination;
+package stepDefinition;
 
 import org.testng.Assert;
 
@@ -56,7 +56,7 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 		
 		if (email.equals("<randomEmail>")) {
             randomEmail = Generate_RandomEmail.generateRandomEmail();
-            email = randomEmail; // Replace with generated email
+            email = randomEmail; 
         }
 		createnewcustomeraccount.enterEmailAddress(email);
 	}
@@ -95,7 +95,7 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 
 	@Then("user should get sign out and navigates to the home page")
 	public void user_should_get_sign_out_and_navigates_to_the_home_page() {
-//		Assert.assertEquals(driver.getTitle(), "Home Page");
+
 		homepage.clickOnSignInLink();
 		
 	}
@@ -103,7 +103,7 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 	@Then("user enters login email {string}")
 	public void user_enters_login_email(String email) {
 		if (email.equals("<randomEmail>")) {
-            email = randomEmail;  // Use the random email from earlier
+            email = randomEmail;  
         }
 		customerlogin.enterLoginEmailID(email);
 	}
