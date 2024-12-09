@@ -9,6 +9,7 @@ import pages.CreateNewCustomerAccount;
 import pages.CustomerLogin;
 import pages.Homepage;
 import pages.MyAccount;
+import utilities.Generate_RandomEmail;
 import utilities.TestBase;
 
 public class TC001_CreateAccountAndSignIn extends TestBase{
@@ -17,7 +18,7 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 	CreateNewCustomerAccount createnewcustomeraccount;
 	MyAccount myaccount;
 	CustomerLogin customerlogin;
-
+	String randomEmail;
 	
 	
 	@Given("user launches the browser and navigates to the Magento homepage")
@@ -52,6 +53,11 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 
 	@When("user enters email {string}")
 	public void user_enters_email(String email) {
+		
+		if (email.equals("<randomEmail>")) {
+            randomEmail = Generate_RandomEmail.generateRandomEmail();
+            email = randomEmail; // Replace with generated email
+        }
 		createnewcustomeraccount.enterEmailAddress(email);
 	}
 
@@ -96,6 +102,9 @@ public class TC001_CreateAccountAndSignIn extends TestBase{
 
 	@Then("user enters login email {string}")
 	public void user_enters_login_email(String email) {
+		if (email.equals("<randomEmail>")) {
+            email = randomEmail;  // Use the random email from earlier
+        }
 		customerlogin.enterLoginEmailID(email);
 	}
 

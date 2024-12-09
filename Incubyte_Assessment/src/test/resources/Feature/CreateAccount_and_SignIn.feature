@@ -13,12 +13,12 @@ Feature: Create new customer account and sign in with that account
     Then user navigates to the My Account Dashboard and verifies the welcome message
     And user clicks on the customer menu toggle
     And user selects the sign out option
-    And user should get sign out and navigates to the home page 
+    And user should get sign out and navigates to the home page
     And user enters login email "<email>"
     And user enters login password "<password>"
     And user clicks on the sign in button
     Then user is signed in successfully
 
     Examples: 
-      | firstname | lastname | email            | password   | confirmpassword |
-      | rajesh    | nikam    | r6r4iv@gmail.com | Rajesh@123 | Rajesh@123      |
+      | firstname | lastname | email         | password   | confirmpassword |
+      | Gaurav    | Wagh     | <randomEmail> | Rajesh@123 | Rajesh@123      |
