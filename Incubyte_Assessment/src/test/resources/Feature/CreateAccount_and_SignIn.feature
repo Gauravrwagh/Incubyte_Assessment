@@ -1,5 +1,6 @@
 Feature: Create new customer account and sign in with that account
 
+@smokeTest
   Scenario Outline: Create A New Account
     Given user launches the browser and navigates to the Magento homepage
     When user clicks the create account link
