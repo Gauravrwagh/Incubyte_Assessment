@@ -15,6 +15,15 @@ public class Homepage extends TestBase {
 	private By menu_WomenSection = By.xpath("//span[text()='Women']/ancestor::a");
 	private By subMenuTops = By.xpath("//span[text()='Women']//following::span[text()='Tops'][1]");
     private By opt_Jackets = By.xpath("//span[text()='Jackets']");
+    private By opt_BrasandTanks = By.xpath("//span[text()='Bras & Tanks']");
+    private By opt_Tees = By.xpath("//span[text()='Tees']");
+    private By opt_HoodiesAndSweatshirts = By.xpath("//span[text()='Hoodies & Sweatshirts']");
+    
+	private By subMenuBottoms = By.xpath("//span[text()='Men']//following::span[text()='Bottoms']");
+    private By opt_Pants = By.xpath("//span[text()='Men']//following::span[text()='Pants'][1]");
+    private By opt_Shorts = By.xpath("//span[text()='Shorts']");
+
+
 	private By menu_MenSection = By.xpath("//span[text()='Men']/ancestor::a");
 	
 
@@ -24,6 +33,8 @@ public class Homepage extends TestBase {
 		
 	}
 
+	Actions act = new Actions(driver);
+	
 	public void clickOnCreateAnAccountLink() {
 		WebElement createAccount = WebDriverWaitUtility.waitForElementToBeClickable(driver, link_CreateAccount);
 //		WebElement createAccount = driver.findElement(link_CreateAccount);
@@ -36,7 +47,7 @@ public class Homepage extends TestBase {
 	}
 	
 	public void selectJackets() {
-		Actions act = new Actions(driver);
+	//	Actions act = new Actions(driver);
 		
 		WebElement womensMenu = WebDriverWaitUtility.waitForElementToBeVisible(driver, menu_WomenSection);
 		WebElement tops = driver.findElement(subMenuTops);
@@ -51,8 +62,21 @@ public class Homepage extends TestBase {
 
 		act.moveToElement(jackets).click().perform();
 		
+	}
+	
+	public void selectPants() {
+	//	Actions act = new Actions(driver);
 
+		WebElement mensMenu = WebDriverWaitUtility.waitForElementToBeVisible(driver, menu_MenSection);
+		WebElement bottoms = driver.findElement(subMenuBottoms);
+		WebElement pants = driver.findElement(opt_Pants);
 		
-		
+		act.moveToElement(mensMenu).perform();
+	//	System.out.println(mensMenu.isEnabled());
+		act.moveToElement(bottoms).perform();
+	//	System.out.println(bottoms.isEnabled());
+	//	System.out.println(pants.isEnabled());
+
+		act.moveToElement(pants).click().perform();
 	}
 }
