@@ -25,32 +25,32 @@ public class CreateNewCustomerAccount extends TestBase{
 	}
 	
 	public void enterFirstName(String firstname) {
-		driver.findElement(input_firstname).sendKeys(firstname);
+		getDriver().findElement(input_firstname).sendKeys(firstname);
 	}
 	
 	public void enterLastname(String lastname) {
-		driver.findElement(input_lastName).sendKeys(lastname);
+		getDriver().findElement(input_lastName).sendKeys(lastname);
 	}
 	
 	public void enterEmailAddress(String emailID) {
-		driver.findElement(input_emailID).sendKeys(emailID);
+		getDriver().findElement(input_emailID).sendKeys(emailID);
 	}
 	
 	public void enterPassword(String password) {
-		driver.findElement(input_password).sendKeys(password);
+		getDriver().findElement(input_password).sendKeys(password);
 	}
 	
 	public void enterConfirmPassword(String confirmPassword) {
-		driver.findElement(input_ConfirmPassword).sendKeys(confirmPassword);
+		getDriver().findElement(input_ConfirmPassword).sendKeys(confirmPassword);
 	}
 	
 	public void clickCreateAccountButton() {
-		driver.findElement(btn_createAccount).click();
+		getDriver().findElement(btn_createAccount).click();
 	}
 	
 	public boolean isEmailAddresErrorDisplayed() {
 		try {
-			WebElement error = driver.findElement(msg_emailAddressError);
+			WebElement error = getDriver().findElement(msg_emailAddressError);
 			return error.isDisplayed();
 		}catch(NoSuchElementException e) {
 			return false;
@@ -59,7 +59,7 @@ public class CreateNewCustomerAccount extends TestBase{
 	
 	public boolean isPasswordErrorDisplayed() {
 		try {
-			WebElement error = driver.findElement(msg_passwordError);
+			WebElement error = getDriver().findElement(msg_passwordError);
 			return error.isDisplayed();
 		}catch(NoSuchElementException e) {
 			return false;
@@ -68,7 +68,7 @@ public class CreateNewCustomerAccount extends TestBase{
 	
 	public boolean isPasswordConfirmationErrorDisplayed() {
 		try {
-			WebElement error = driver.findElement(msg_passwordConfirmationError);
+			WebElement error = getDriver().findElement(msg_passwordConfirmationError);
 			return error.isDisplayed();
 		}catch(NoSuchElementException e) {
 			return false;

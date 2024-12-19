@@ -23,9 +23,9 @@ public class TC002_WomensSectionShopping extends TestBase{
 
 	@Then("options for jackets shows")
 	public void options_for_jackets_shows() {
-	   Assert.assertEquals(driver.getTitle(), "Jackets - Tops - Women");
+	   Assert.assertEquals(getDriver().getTitle(), "Jackets - Tops - Women");
 	   
-		System.out.println(driver.getTitle());
+		System.out.println(getDriver().getTitle());
 	}
 	
 	@Then("user fetch available item name and price")

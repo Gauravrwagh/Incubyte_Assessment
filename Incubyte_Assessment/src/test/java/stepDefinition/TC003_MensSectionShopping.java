@@ -25,9 +25,9 @@ public class TC003_MensSectionShopping extends TestBase{
 	@When("options for pants shows")
 	public void options_for_pants_shows() {
 	    
-		 Assert.assertEquals(driver.getTitle(), "Pants - Bottoms - Men");
+		 Assert.assertEquals(getDriver().getTitle(), "Pants - Bottoms - Men");
 		   
-			System.out.println(driver.getTitle());
+			System.out.println(getDriver().getTitle());
 	}
 
 	@Then("user prints names and price of pants")
@@ -36,4 +36,6 @@ public class TC003_MensSectionShopping extends TestBase{
 		pantsmen.getProductPriceAndName();
 		System.out.println("*****");
 	}
+	
+	
 }

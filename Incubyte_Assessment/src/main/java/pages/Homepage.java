@@ -10,7 +10,8 @@ import utilities.WebDriverWaitUtility;
 
 public class Homepage extends TestBase {
 
-	private By link_CreateAccount = By.xpath("//div[@class='panel header']//ul//a[text()='Create an Account1']");
+
+	private By link_CreateAccount = By.xpath("//div[@class='panel header']//ul//a[text()='Create an Account']");
 	private By link_Sign = By.xpath("//div[@class='panel header']//ul//li[2]");
 	private By menu_WomenSection = By.xpath("//span[text()='Women']/ancestor::a");
 	private By subMenuTops = By.xpath("//span[text()='Women']//following::span[text()='Tops'][1]");
@@ -32,26 +33,28 @@ public class Homepage extends TestBase {
 		super();
 		
 	}
+	
+	
 
-	Actions act = new Actions(driver);
+	Actions act = new Actions(getDriver());
 	
 	public void clickOnCreateAnAccountLink() {
-		WebElement createAccount = WebDriverWaitUtility.waitForElementToBeClickable(driver, link_CreateAccount);
+		WebElement createAccount = WebDriverWaitUtility.waitForElementToBeClickable(getDriver(), link_CreateAccount);
 //		WebElement createAccount = driver.findElement(link_CreateAccount);
 		createAccount.click();
 	}
 	
 	
 	public void clickOnSignInLink() {
-		driver.findElement(link_Sign).click();
+		getDriver().findElement(link_Sign).click();
 	}
 	
 	public void selectJackets() {
 	//	Actions act = new Actions(driver);
 		
-		WebElement womensMenu = WebDriverWaitUtility.waitForElementToBeVisible(driver, menu_WomenSection);
-		WebElement tops = driver.findElement(subMenuTops);
-		WebElement jackets = driver.findElement(opt_Jackets);
+		WebElement womensMenu = WebDriverWaitUtility.waitForElementToBeVisible(getDriver(), menu_WomenSection);
+		WebElement tops = getDriver().findElement(subMenuTops);
+		WebElement jackets = getDriver().findElement(opt_Jackets);
 		
 		act.moveToElement(womensMenu).perform();
 	//	System.out.println(womensMenu.isEnabled());
@@ -67,9 +70,9 @@ public class Homepage extends TestBase {
 	public void selectPants() {
 	//	Actions act = new Actions(driver);
 
-		WebElement mensMenu = WebDriverWaitUtility.waitForElementToBeVisible(driver, menu_MenSection);
-		WebElement bottoms = driver.findElement(subMenuBottoms);
-		WebElement pants = driver.findElement(opt_Pants);
+		WebElement mensMenu = WebDriverWaitUtility.waitForElementToBeVisible(getDriver(), menu_MenSection);
+		WebElement bottoms = getDriver().findElement(subMenuBottoms);
+		WebElement pants = getDriver().findElement(opt_Pants);
 		
 		act.moveToElement(mensMenu).perform();
 	//	System.out.println(mensMenu.isEnabled());
@@ -79,4 +82,8 @@ public class Homepage extends TestBase {
 
 		act.moveToElement(pants).click().perform();
 	}
+	
+	
+	 	
+	
 }

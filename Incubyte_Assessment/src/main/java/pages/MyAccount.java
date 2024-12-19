@@ -18,7 +18,7 @@ public class MyAccount extends TestBase{
 	 
 	 public boolean isWelcomeMessageDisplayed() {
 		 try {
-			 WebElement welcomeMessage = driver.findElement(msg_welcome);
+			 WebElement welcomeMessage = getDriver().findElement(msg_welcome);
 			 return welcomeMessage.isDisplayed();
 		 }catch(Exception e) {
 			 return false;
@@ -26,10 +26,10 @@ public class MyAccount extends TestBase{
 	 }
 	 
 	 public void clickOnCustomerMenu() {
-		 driver.findElement(btn_customerMenu).click();
+		 getDriver().findElement(btn_customerMenu).click();
 	 }
 	 
 	 public void selectSignoutOption() {
-		 driver.findElement(link_signout).click();;
+		 getDriver().findElement(link_signout).click();;
 	 }
 }

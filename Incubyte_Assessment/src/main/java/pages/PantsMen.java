@@ -18,14 +18,15 @@ public class PantsMen extends TestBase{
 public void  getProductPriceAndName() {
 	
 		
-		List<WebElement> products = driver.findElements(prodectList);
+		List<WebElement> products = getDriver().findElements(prodectList);
 		int num = products.size();
 		System.out.println(num);
+
 		for(int i=1;i<=num;i++) {
-		WebElement name = driver.findElement(By.xpath("//ol[@class='products list items product-items']//li["+i+"]//strong//a"));
-		WebElement price = driver.findElement(By.xpath("//ol[@class='products list items product-items']//li["+i+"]//div//div//span[@class='price']"));
-		System.out.println("Name : "+ name.getText()+"         price : "+price.getText());
-		
+		WebElement name = getDriver().findElement(By.xpath("//ol[@class='products list items product-items']//li["+i+"]//strong//a"));
+		WebElement price = getDriver().findElement(By.xpath("//ol[@class='products list items product-items']//li["+i+"]//div//div//span[@class='price']"));
+		System.out.println(String.format("%-35s %-10s", "Name: " + name.getText(), "Price: " + price.getText()));
+
 	}
 }
 

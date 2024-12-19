@@ -16,18 +16,18 @@ public class CustomerLogin extends TestBase{
 	}
 	
 	public void enterLoginEmailID(String email) {
-		WebElement emailid = driver.findElement(input_email);
+		WebElement emailid = getDriver().findElement(input_email);
 		emailid.clear();
 		emailid.sendKeys(email);
 	}
 	
 	public void enterLoginPassword(String password) {
-		WebElement pass = driver.findElement(input_password);
+		WebElement pass = getDriver().findElement(input_password);
 		pass.clear();
 		pass.sendKeys(password);
 	}
 	
 	public void clickOnSignInbutton() {
-		driver.findElement(btn_signIn).click();
+		getDriver().findElement(btn_signIn).click();
 	}
 }
